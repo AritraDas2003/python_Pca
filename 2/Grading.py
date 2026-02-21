@@ -1,5 +1,5 @@
 marks =[]
-
+# taking inputs for marks of 4 subjects
 for i in range(1,5):
   mark =float(input(f"Enter the marks of subject {i}: "))
   if 0<= mark <=100:
