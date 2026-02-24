@@ -10,8 +10,9 @@ for i in range(1,5):
 
 #sum of marks
 total=0
-for mark in marks:
-  total = total + mark
+
+for i in marks:
+  total = total + i
 
 aggregate = total/4
 

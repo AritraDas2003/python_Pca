@@ -1,15 +1,17 @@
-num = int (input("enter a number"))
-count = 0
+try:
+  original_num = input("Enter a number:")
+  num = float(original_num)
 
-# base condion for 0 as it has 1 digit
-# the loop comes to this condition when the number is reduced to 0 after removing all digits
-if num == 0:
-  count = 1
-else:
-  while num>0:
-    dig = num%10 #to get the last digit
-    count = count +1 #to count the number of digits
-    num = num//10 #to remove the last digit
+  num = abs(num)
 
+  count = 0
 
-print(f"number of digits in the number is {count}")
+  str_num = str(num)
+
+  for char in str_num:
+    if char != '.':
+      count += 1
+  print (f"number of digits in {num} is {count}")
+
+except ValueError:
+  print(f"Invalid input, please enter a valid number you entered  < {original_num} >")

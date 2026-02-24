@@ -1,4 +1,5 @@
 # Program to check Perfect Number
+# perfect number is a positive integer that is equal to the sum of its proper divisors, 'excluding itself'. For example, 6 is a perfect number because its divisors are 1, 2, and 3, and their sum is 6.
 
 num = int(input("Enter a number: "))
 

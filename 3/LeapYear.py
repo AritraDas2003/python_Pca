@@ -1,4 +1,5 @@
 year = int(input("Enter a year: "))
+
 if year<1:
   print("Invalid year, please enter a valid year")
 elif (year%4==0 and year%100 !=0) or (year%400==0):

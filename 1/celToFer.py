@@ -1,6 +1,10 @@
 try:
-  temp = float(input("Enter the number in celcious: "))
-  ferhenhiet = (temp/ 5)*9 + 32
-  print(f"{temp} degrees Celcious is equal to {ferhenhiet} degrees Ferhenhiet")
+  temp = float(input('enter temp in cel..: '))
+  ferr = (temp *1.8) + 32
+  #  for fer to cell
+  # c = (f-32)/1.8
+
+  print(f'temp in fer is {ferr}')
+
 except ValueError:
-  print('Vallue Error,please enter corrrect number ')
+  print('invalid type')
