@@ -17,4 +17,4 @@ if n <= 0:
 else:
     print("Fibonacci Series:")
     for i in range(n):
-        print(fibonacci(i), end=" ")
+        print(fibonacci(i), end=",")

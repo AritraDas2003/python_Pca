@@ -1,13 +1,20 @@
 # Program to calculate e^x up to nth term
 
-x = float(input("Enter value of x: "))
-n = int(input("Enter number of terms: "))
+def exp_series(x, n):
 
-sum_series = 1  # First term is 1
-term = 1        # To calculate each term
+    sum_series = 1  # First term is 1
+    term = 1        # To calculate each term
 
-for i in range(1, n):
-    term = term * x / i
-    sum_series += term
+    for i in range(1, n):
+        term = term * x / i
+        sum_series += term
 
-print("Value of e^", x, "up to", n, "terms is:", sum_series)
+    return sum_series
+
+try:
+    x = float(input("Enter value of x: "))
+    n = int(input("Enter number of terms: "))
+    result = exp_series(x, n)
+    print(f"Value of e^{x} up to {n} terms is: {result}")
+except ValueError:
+    print("Invalid input. Please enter numeric values.")

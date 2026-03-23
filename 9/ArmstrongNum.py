@@ -1,31 +1,37 @@
-# abc = a^n+b^n+c^n
-# n is the number of digits in the number
+# abc = a^n + b^n + c^n where n is the number of digits in the number
+def check_armstrong_number(num):
 
-num = int(input("enter a number:"))
+  original = num
+  num = abs(num)
 
-original = num
-num = abs(num) # to handle negative numbers
+  temp = num
+  count = 0
 
-count = 0
-temp = num
+  # count digits
+  if temp ==0:
+    return 1
+  else:
+    while temp > 0:
+       count += 1
+       temp = temp //10
 
-if temp == 0:
-  count = 1
-else:
-  while temp >0:
-    dig = temp %10
-    temp= temp//10
-    count = count +1
+  #  sum of power
+  temp = num
+  sum_of_pow = 0
 
-sum_of_powers = 0
-temp = num # second time because if the temp becomes 0  in the previous loop,then we can not calculate the sum of powers
+  while temp > 0:
+     dig = temp % 10 # --> we get digit form here
+     sum_of_pow += dig ** count
+     temp = temp // 10
 
-while temp >0:
-  dig = temp %10
-  sum_of_powers = sum_of_powers + dig ** count # calculating the sum of the powers of the digits of the number using the count of the digits as the power
-  temp= temp//10
+  if original >= 0 and sum_of_pow == original:
+    print(f"{original} is an Armstrong number")
+  else:
+    print(f"{original} is not an Armstrong number")
 
-if (original >=0) and (sum_of_powers == original):
-  print(f"{original} is an armstrong number")
-else:
-  print(f"{original} is not an armstrong number")
+
+try:
+  num = int(input("enter a number: "))
+  check_armstrong_number(num)
+except ValueError:
+  print("Please enter a valid integer")

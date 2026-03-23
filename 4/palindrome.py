@@ -1,14 +1,19 @@
-num = int(input("Enter a number: "))
+def is_palindrome(num):
+  temp = num
+  rev = 0
 
-temp = num
-rev = 0
+  while num >0:
+    dig = num%10
+    rev = rev*10 + dig
+    num = num //10
 
-while temp >0:
-  dig =temp%10
-  rev = rev*10 + dig
-  temp = temp//10
+  if rev == temp:
+    print(f"{temp} is a palindrome")
+  else:
+    print(f"{temp} is not a palindrome")
 
-if rev == num:
-  print("number is palindrom")
-else:
-  print("Its not palindrom")
+num = input("Enter a number: ")
+try:
+  is_palindrome(int(num))
+except ValueError:
+  print("Invalid input. Please enter a valid integer.")

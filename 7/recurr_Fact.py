@@ -1,11 +1,13 @@
 def fact(num):
-  if num<0:
-    print("can not perform on numbers less than 0")
-  elif(num ==0 or num ==1):
+  if num < 0:
+    print("Can not operate on numbers less than 0")
+    exit()
+  elif(num ==1 or num ==0):
     return 1
   else:
     return num*fact(num-1)
 
-num = int(input("enter the number: "))
 
-print(f"factorial of {num} is {fact(num)}")
+num = int(input("enter the number: "))
+factorial = fact(num)
+print(f"factorial of {num} is {factorial}")

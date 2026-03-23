@@ -1,16 +1,16 @@
-# Program to calculate LCM using GCD
-
-def gcd(a, b):
+def find_gcd(a, b):
     while b != 0:
-        a, b = b, a % b
+        remainder = a % b
+        a = b
+        b = remainder
     return a
 
+def find_lcm(a, b):
+    gcd = find_gcd(a, b)
+    return (a * b) // gcd
+
+# Input
 num1 = int(input("Enter first number: "))
 num2 = int(input("Enter second number: "))
 
-num1 = abs(num1)
-num2 = abs(num2)
-
-lcm = (num1 * num2) // gcd(num1, num2)
-
-print("LCM is:", lcm)
+print("LCM of", num1, "and", num2, "is:", find_lcm(num1, num2))

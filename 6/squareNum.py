@@ -1,12 +1,22 @@
-num = int(input("Enter a number: "))
-if (num < 0):
-  print("negetive number can not be squared")
+# squre num = root * root = original num
+# runs in O(1) time complexity, as it performs a constant number of operations regardless of the input size.
+def is_squre_num(num):
+    if num <0:
+        return False
+    root =  int(num** 0.5)
+    if (root*root == num):
+        return True
+    else:
+        return False
 
-# first taking root of the number and then, checking if the squre of  the 'root' i.e: root*root = original_number
-else:
-  root = num ** 0.5
-  # the square of the root is the original number-- must satisfy to be a perfect square number
-  if (root*root == num):
-    print("the number is perfect square")
-  else:
-    print("the number is not perfect square")
+
+
+try:
+    user_input = input("enter a number to check: ")
+    num = int(user_input)
+    if (is_squre_num(num)):
+        print(f"{user_input} is a squre number")
+    else:
+        print(f"{user_input} is not a squre number")
+except ValueError:
+    print("Invalid input. Please enter a valid integer.")
